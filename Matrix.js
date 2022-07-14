@@ -26,7 +26,7 @@ exports.Matrix = {
 		];
 	},
 	translate:function(m,tx,ty) {
-		return Matrix.multiply([
+		return this.multiply([
 			1,0,0,
 			0,1,0,
 			tx,ty,1
@@ -34,7 +34,7 @@ exports.Matrix = {
 		
 	},
 	scale:function(m,s) {
-		return Matrix.multiply([
+		return this.multiply([
 			s,0,0,
 			0,s,0,
 			0,0,1
@@ -44,7 +44,7 @@ exports.Matrix = {
 		const rad = angle*(Math.PI/180.0);
 		const s = Math.sin(rad);
 		const c = Math.cos(rad);
-		return Matrix.multiply([
+		return this.multiply([
 			c,s,0,
 			-s,c,0,
 			0,0,1
