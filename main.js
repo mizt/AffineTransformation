@@ -19,8 +19,8 @@ for(var i=0; i<h; i++) {
 		const py = Matrix.py(mat,j,i);
 		
 		const addr = i*w+j;
-		const x = 0x5555+(px<<3);
-		const y = 0x5555+(py<<3);
+		const x = (0x5555+(px*8.0))>>0;
+		const y = (0x5555+(py*8.0))>>0;
 		buffer.setPixelColor(((y&0xFF)<<24|(y>>8)<<16|(x&0xFF)<<8|(x>>8))>>>0,j,i);
 	}
 }
